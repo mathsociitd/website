@@ -1,5 +1,12 @@
 
 // $("header").load("./partials/header.html");
+var mode = localStorage['mode'] || 'light';
+localStorage['mode'] = mode;
+
+if (mode == 'dark'){
+	$("body").addClass("dark");
+	$("#mode-toggler").html("Switch to light mode");
+}
 
 
 $.ajax({
@@ -127,10 +134,12 @@ $(".nav-link").click(function() {
 			if ($("body").hasClass("dark")) {
 				$("body").removeClass("dark");
 				$("#mode-toggler").html("Switch to dark mode");
+				localStorage['mode'] = 'light';
 			}
 			else {
 				$("body").addClass("dark");
 				$("#mode-toggler").html("Switch to light mode");
+				localStorage['mode'] = 'dark';
 			}
 		}
 	});
@@ -143,6 +152,7 @@ $(".nav-link").click(function() {
 			$(".for-light-text").fadeOut("fast",function(){
 				$(".for-dark-text").fadeIn();
 			});
+			localStorage['mode'] = 'light';
 			
 		}
 		else {
@@ -152,6 +162,7 @@ $(".nav-link").click(function() {
 			$(".for-dark-text").fadeOut("fast",function(){
 				$(".for-light-text").fadeIn();
 			});
+			localStorage['mode'] = 'dark';
 		}
 	})	
 
