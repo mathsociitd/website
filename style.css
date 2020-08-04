@@ -332,7 +332,19 @@ main{
 	padding-bottom: 25px;
 }
 
+a.link-normal{
+	color: #444;
+}
+a.link-normal:hover{
+	color: #111;
+}
 
+.dark a.link-normal{
+	color: #ddd;
+}
+.dark a.link-normal:hover{
+	color: #fff;
+}
 
 .center{
 	text-align: center;
@@ -730,10 +742,10 @@ a.btn-1{
 }
 
 .dark #team .mem {
-	background-color: #1b1b1b;
+	background-color: #212121;
 }
 .dark #team .mem:hover{
-	background-color: #212121;
+	background-color: #2f2f2f;
 }
 
 .dark #team .mem .mem-name{
@@ -803,6 +815,7 @@ a.btn-1{
 	margin: 16px 0; 
 	text-align: left;
     transition: .4s ease all;
+    cursor:  pointer;
 }
 .dark #contact-form input,.dark #contact-form textarea {
     background: #212121;
