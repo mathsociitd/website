@@ -809,6 +809,7 @@ a.btn-1{
     border-color: transparent;
 }
 #contact-form .submit-msg{
+	display: none;
 	background-color: #dadada;
 	padding: 9px 16px;
 	font-size: 1.023em;
@@ -819,7 +820,7 @@ a.btn-1{
 }
 .dark #contact-form input,.dark #contact-form textarea {
     background: #212121;
-    color: #fafafa;
+    color: rgba(255,255,255,.9);
 }
 .dark #contact-form input:: -webkit-input-placeholder,.dark #contact-form textarea:: -webkit-input-placeholder {
     color: #dadada;

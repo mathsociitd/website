@@ -17,12 +17,12 @@
             <div class="col-md-7 offset-md-1">           
               <h3><i class="fa fa-edit"></i>&nbsp;Write to us</h3>
               <center>
-                <form id="contact-form" method="POST" action="https://formspree.io/mail@example.com">
+                <form id="contact-form" method="POST" action="#">
                     <input type="email" name="_replyto" placeholder="Your email" required>
                     <input type="text" name="_subject" placeholder="Subject" required>
                     <textarea name="message" placeholder="Your message" required></textarea>
-                    <button type="submit">Send</button>
-                    <div class="submit-msg">Form submitted successfully</div>
+                    <button id="contact-form-submit" type="submit">Send</button>
+                    <div class="submit-msg" id="contact-form-status">Form submitted successfully</div>
                 </form>
               </center>
             </div>
@@ -33,3 +33,52 @@
       </div>    
     </div>         
   </div>
+
+  <script>
+    // Form submission
+
+      var form = document.getElementById("contact-form");
+      var timeout;
+      
+      // Success and Error functions for after the form is submitted
+      function success() {
+        $("#contact-form>button").html("Send");
+        form.reset();
+        $("#contact-form>.submit-msg").html("Form submitted successfully.");
+        $("#contact-form>.submit-msg").slideDown("fast");
+        timeout = setTimeout(function(){ $("#contact-form>.submit-msg").slideUp(); }, 7500);
+      }
+      function error() {
+        $("#contact-form>button").html("Send");
+        $("#contact-form>.submit-msg").html("Form submission failed. Please try again.");
+        $("#contact-form>.submit-msg").slideDown("fast");
+        timeout = setTimeout(function(){ $("#contact-form>.submit-msg").slideUp(); }, 7500);
+      }
+
+      // handle the form submission event
+      $("body").on("submit", "#contact-form" , function(ev) {
+        ev.preventDefault();
+        clearTimeout(timeout);
+        $("#contact-form>.submit-msg").slideUp("fast",function(){
+          $("#contact-form>button").html("Sending...");
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+        });
+      });
+    
+    // helper function for sending an AJAX request
+    function ajax(method, url, data, success, error) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          success(xhr.response, xhr.responseType);
+        } else {
+          error(xhr.status, xhr.response, xhr.responseType);
+        }
+      };
+      xhr.send(data);
+    }
+  </script>
