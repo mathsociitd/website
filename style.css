@@ -449,6 +449,20 @@ a.btn-1{
   transform: translateX(26px);
 }
 
+#events .msg-box{
+	display: block;
+	margin-top: 25px;
+	padding: 9px 16px;
+	text-align: center;
+	transition: all .3s ease-in-out;
+	background-color: rgba(129, 103, 169,.8);
+	color: #fafafa;
+}
+
+.dark #events .msg-box{
+	background-color: rgba(30, 144, 255, .8);
+	color: rgba(255,255,255,.8);
+}
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
