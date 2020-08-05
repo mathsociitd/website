@@ -713,6 +713,7 @@ a.btn-1{
 	text-align: center;
 	transition: all .3s ease-in-out;
 	background-color: #fcfcfc;
+	height: calc(100% - 32px);
 	/*cursor:  pointer;*/
 }
 
@@ -726,13 +727,24 @@ a.btn-1{
 #team .mem .mem-name{
 	font-size: 1.5em;
 	text-transform: capitalize;
-	padding: 9px;
+	padding: 9px 2px 6px;
 }
 
 #team .mem .mem-pos{
-	padding: 4px;
+	padding: 2px 2px 4px;
 	color: #222;
 	size: 0.9em;
+}
+
+#team .mem-social>a{
+	display: inline-block;
+	margin: 6px 6px 2px;
+	font-size: 1.1em;
+	color: #232323;
+	transition:  all .2s ease-in-out;
+}
+#team .mem-social>a:hover{
+	color: #636363;
 }
 
 #team .mem:hover {
@@ -754,6 +766,13 @@ a.btn-1{
 
 .dark #team .mem .mem-pos{
 	color: rgba(255,255,255,0.6);
+}
+
+.dark #team .mem-social>a{
+	color: #dadada;
+}
+.dark #team .mem-social>a:hover{
+	color: #bababa;
 }
 
 #contact-form input,#contact-form textarea {
