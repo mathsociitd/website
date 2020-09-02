@@ -57,10 +57,7 @@
   	<div style="position:absolute;bottom:0;left:0;right:0;">
 
       <div class="container" style="margin-bottom:25px;">
-          <div class="color-box" style="margin-top: 25px;margin-bottom: 5px;">
-            <span>Go back to the present</span>
-            <a href="../">Go back</a>
-          </div>
+          <div onclick="location='../'" class="color-box left-arrow l-font right-align" style="margin-top: 25px;margin-bottom: 5px;">Go back to the current version</div>
       </div>
 
   	  <center>
