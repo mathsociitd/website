@@ -397,28 +397,14 @@ a.btn-1{
 	color: rgba(255,255,255,.8);
 }
 
-.right-arrow{
-	position: relative;
-	padding-right: 50px;
-	cursor: pointer;
+.pointer{
+	cursor:  pointer;
 }
-.right-arrow:after{
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 15px 25px;
-	content: "\f105";
-	font-family:  FontAwesome;
-	text-transform: uppercase;
-	display: inline-block;
-	color: #fafafa;
-	transition: all 0.3s ease-in-out;
-	opacity: 0.6;
+
+.color-box .arrow{
+	opacity: 0.7;
 }
-.dark .right-arrow:after{
-	color: rgba(255,255,255,.8);
-}
-.right-arrow:hover:after{
+.color-box:hover .arrow{
 	opacity: 0.95;
 	-webkit-animation: bounce 2s;
 	animation: bounce 2s;
@@ -435,12 +421,12 @@ a.btn-1{
 	          transform: translateX(0);
 	}
 	40% {
-	  -webkit-transform: translateX(15%);
-	          transform: translateX(15%);
+	  -webkit-transform: translateX(100%);
+	          transform: translateX(100%);
 	}
 	60% {
-	  -webkit-transform: translateX(-7.5%);
-	          transform: translateX(-7.5%);
+	  -webkit-transform: translateX(50%);
+	          transform: translateX(50%);
 	}
 }
 @keyframes bounce{
@@ -453,12 +439,12 @@ a.btn-1{
 	        transform: translateX(0);
 	}
 	40% {
-	  -webkit-transform: translateX(15%);
-	        transform: translateX(15%);
+	  -webkit-transform: translateX(100%);
+	        transform: translateX(100%);
 	}
 	60% {
-	  -webkit-transform: translateX(-7.5%);
-	        transform: translateX(-7.5%);
+	  -webkit-transform: translateX(50%);
+	        transform: translateX(50%);
 	}
 }
 

@@ -57,7 +57,7 @@
   	<div style="position:absolute;bottom:0;left:0;right:0;">
 
       <div class="container" style="margin-bottom:25px;">
-          <div onclick="location='../'" class="color-box left-arrow l-font right-align" style="margin-top: 25px;margin-bottom: 5px;">Go back to the current version</div>
+          <div onclick="location='../'" class="color-box l-font pointer" style="margin-top: 25px;margin-bottom: 5px;"><i class="fa fa-angle-left arrow"></i><span style="margin-left:16px;">Go back to the current version</span></div>
       </div>
 
   	  <center>

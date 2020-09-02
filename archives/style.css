@@ -221,29 +221,14 @@ a.btn-1{
 	color: rgba(255,255,255,.8);
 }
 
-.left-arrow{
-	position: relative;
-	padding-left: 50px;
-	cursor: pointer;
-	padding-right: 25px;
+.pointer{
+	cursor:  pointer;
 }
-.left-arrow:after{
-	position: absolute;
-	left: 0;
-	top: 0;
-	padding: 15px 25px;
-	content: "\f104";
-	font-family:  FontAwesome;
-	text-transform: uppercase;
-	display: inline-block;
-	color: #fafafa;
-	transition: all 0.3s ease-in-out;
-	opacity: 0.6;
+
+.color-box .arrow{
+	opacity: 0.7;
 }
-.dark .left-arrow:after{
-	color: rgba(255,255,255,.8);
-}
-.left-arrow:hover:after{
+.color-box:hover .arrow{
 	opacity: 0.95;
 	-webkit-animation: bounce 2s;
 	animation: bounce 2s;
@@ -260,12 +245,12 @@ a.btn-1{
 	          transform: translateX(0);
 	}
 	40% {
-	  -webkit-transform: translateX(-15%);
-	          transform: translateX(-15%);
+	  -webkit-transform: translateX(-100%);
+	          transform: translateX(-100%);
 	}
 	60% {
-	  -webkit-transform: translateX(7.5%);
-	          transform: translateX(7.5%);
+	  -webkit-transform: translateX(-50%);
+	          transform: translateX(-50%);
 	}
 }
 @keyframes bounce{
@@ -278,21 +263,17 @@ a.btn-1{
 	        transform: translateX(0);
 	}
 	40% {
-	  -webkit-transform: translateX(-15%);
-	        transform: translateX(-15%);
+	  -webkit-transform: translateX(-100%);
+	        transform: translateX(-100%);
 	}
 	60% {
-	  -webkit-transform: translateX(7.5%);
-	        transform: translateX(7.5%);
+	  -webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	}
 }
 
 .l-font{
  	font-size: 1.1em;
-}
-
-.right-align{
-	text-align: right;
 }
 
 footer{
