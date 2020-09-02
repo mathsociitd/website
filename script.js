@@ -65,6 +65,7 @@ function page_switch(val){
 				    	}
 				    }
 
+				    $(window).scrollTop(0);
 				    $('main').fadeIn();
 				    //$('main>*').fadeOut();
 				    history.replaceState(undefined, undefined, "#/"+val+'/');

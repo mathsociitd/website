@@ -277,6 +277,9 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	p{
 		font-size: 15px;
 	}
+	.nav-item, .nav-link{
+		display: block;
+	}
 	.nav-item:after{
 		display: none;
 	}
