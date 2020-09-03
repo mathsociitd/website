@@ -6,7 +6,11 @@ localStorage['mode'] = mode;
 if (mode == 'dark'){
 	$("body").addClass("dark");
 	$("#mode-toggler").html("Switch to light mode");
-}
+
+	$('meta[name="theme-color"]').attr("content","#000");
+	$('meta[name="msapplication-navbutton-color"]').attr("content","#000");
+	$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#000");
+	}
 
 
 $.ajax({
@@ -58,10 +62,18 @@ function page_switch(val){
 				    		$("#mode-toggler-switch>input").prop("checked",true);
 				    		$(".for-light-text").css("display","block");
 				    		$(".for-dark-text").css("display", "none");
+
+				    		$('meta[name="theme-color"]').attr("content","#000");
+				    		$('meta[name="msapplication-navbutton-color"]').attr("content","#000");
+				    		$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#000");
 				    	}
 				    	else{
 				    		$(".for-light-text").css("display","none");
 				    		$(".for-dark-text").css("display", "block");
+
+				    		$('meta[name="theme-color"]').attr("content","#fff");
+				    		$('meta[name="msapplication-navbutton-color"]').attr("content","#fff");
+				    		$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#fff");
 				    	}
 				    }
 
@@ -118,20 +130,6 @@ $(".nav-link").click(function() {
 			$('.navbar-toggler').trigger('click');
 		}
 	})
-
-
-	//Switch light/dark
-
-	function mode_toggler(){
-		if ($("body").hasClass("dark")) {
-			$("body").removeClass("dark");
-			$("#switch").removeClass("switched");
-		}
-		else {
-			$("body").addClass("dark");
-			$("#switch").addClass("switched");
-		}
-	}
 	
 		
 	$("body").on("click","#mode-toggler",function(){
@@ -143,11 +141,19 @@ $(".nav-link").click(function() {
 				$("body").removeClass("dark");
 				$("#mode-toggler").html("Switch to dark mode");
 				localStorage['mode'] = 'light';
+
+				$('meta[name="theme-color"]').attr("content","#fff");
+				$('meta[name="msapplication-navbutton-color"]').attr("content","#fff");
+				$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#fff");
 			}
 			else {
 				$("body").addClass("dark");
 				$("#mode-toggler").html("Switch to light mode");
 				localStorage['mode'] = 'dark';
+
+				$('meta[name="theme-color"]').attr("content","#000");
+				$('meta[name="msapplication-navbutton-color"]').attr("content","#000");
+				$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#000");
 			}
 		}
 	});
@@ -161,6 +167,10 @@ $(".nav-link").click(function() {
 				$(".for-dark-text").fadeIn();
 			});
 			localStorage['mode'] = 'light';
+
+			$('meta[name="theme-color"]').attr("content","#fff");
+			$('meta[name="msapplication-navbutton-color"]').attr("content","#fff");
+			$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#fff");
 			
 		}
 		else {
@@ -171,6 +181,10 @@ $(".nav-link").click(function() {
 				$(".for-light-text").fadeIn();
 			});
 			localStorage['mode'] = 'dark';
+
+			$('meta[name="theme-color"]').attr("content","#000");
+			$('meta[name="msapplication-navbutton-color"]').attr("content","#000");
+			$('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content","#000");
 		}
 	})	
 
