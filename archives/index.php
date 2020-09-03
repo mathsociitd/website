@@ -5,6 +5,13 @@
   <title>Archives | Mathematics Society, IIT Delhi</title>
    
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#fff">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#fff">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
     
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -39,7 +46,7 @@
   	        	foreach($years as $y){
   	        		echo '
   	        			<div class="col-lg-4 col-sm-6">
-  	        			  <a class="btn-1 block center" href="'.$y.'">'.$y.'</a>
+  	        			  <a class="btn-1 block center" href="'.$y.'/">'.$y.'</a>
   	        			</div>
   	        		';
   	        	}
