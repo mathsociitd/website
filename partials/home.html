@@ -23,8 +23,20 @@
             </div>
           </div>
 
+          <div id="feed" class="container">
+            <div class="row">
+              <div class="col-8" style="margin-bottom:15px;"><h3>Latest Posts</h3></div>
+              <div class="col-4" style="text-align:right;"><a href="https://mathsociitd.github.io/blog/" target="_blank">Show all</a></div>
+            </div>
+            <div class="row" id="feed-items"></div>
+            <div class="row" style="margin-top: 18px;">
+              <div class="col-xl-9 col-md-7 col-sm-4 col-3"></div>
+              <div class="col-xl-3 col-md-5 col-sm-8 col-9"><div onclick="window.open('https://mathsociitd.github.io/blog/','_blank');" id="feeds-all-btn">Continue Reading &nbsp;<i class="fa fa-angle-right arrow"></i></div></div>
+            </div>
+          </div>
 
-          <div style="margin-top:36px;">
+
+          <div style="margin-top:45px;">
             <center>
               <div class="flex">
                 <div style="margin-right:16px;" class="for-light-text">
@@ -63,3 +75,43 @@
     </center>
     
   </div>
+
+
+  <script>
+    const RSS_URL = `https://mathsociitd.github.io/blog/feed.xml`;
+
+    $.ajax(RSS_URL, {
+      accepts: {
+        xml: "application/rss+xml"
+      },
+      dataType: "xml",
+      cache: false,
+
+      success: function(data) {
+        console.log(data);
+        $(data)
+          .find("item")
+          .each(function() {
+            const el = $(this);
+
+            const template = `
+              <article class="col-md-6">
+                <div class="feed-item">        
+                  <h4 class="feed-title">${el.find("title").text()}</h4>
+                  <p class="feed-summ">${el.find("summary").text()}</p>
+                  
+                  <div><a href="${el.find("link").text()}" target="_blank" style="opacity:0.9" rel="noopener">Read more
+                  </a></div>
+
+                  <div class="feed-dt">${el.find("pubDate").text()}&nbsp;</div>
+                </div>
+              </article>
+            `;
+
+            $("#feed-items").append(template)
+          });
+
+          $("#feed").fadeIn();
+      }
+    });
+  </script>
