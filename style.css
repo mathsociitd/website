@@ -617,6 +617,18 @@ a.btn-1{
 	background-color: #2f2f2f;
 }
 
+#feed .arrow{
+	margin-left: 10px;
+}
+
+#feed:hover .arrow{
+	opacity: 0.97;
+	-webkit-animation: bounce 2s;
+	animation: bounce 2s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
 #events .msg-box{
 	display: block;
 	margin-top: 25px;
