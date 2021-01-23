@@ -1174,3 +1174,14 @@ footer .copy{
 		right: 0;
 	}
 }
+
+/** Offline alert **/
+.alert-offline{
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	transform:translateX(-50%);
+	margin: 0;
+	z-index:101;
+	width: 100%;
+}

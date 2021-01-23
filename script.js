@@ -40,7 +40,30 @@ function hash_checker(){
 	page_switch(val);
 }
 
+function alert_offline(){
+	history.replaceState(null, null, "#/"+$('ul.navbar-nav>li.active').attr('id').substr(4,)+"/"); // revert hash
+	var err_msg = "<div style='font-size:1.075em;'><strong>You are Offline!</strong></div><div style='line-height:1.3'>No network available. Check your internet connection and try again!</div>"; // error message in alert box
+	
+	$(`<div class="alert-offline alert alert-danger alert-dismissible fade show" role="alert">
+		  ` + err_msg + `
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>`)
+	    .appendTo('body')
+	    .delay(7500)
+	    .queue(function() {
+	        $(this).alert('close');
+	    });
+}
+
 function page_switch(val){
+	if (!navigator.onLine){
+		alert_offline();
+		return;
+	}
+	$(".alert-offline").alert('close');
+
 	$('ul.navbar-nav>li').removeClass('active');
 	show_loader();
 	$.ajax({
