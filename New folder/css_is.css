@@ -9,8 +9,12 @@ body {
   background-color: #fbfbfb;
   overflow-x: hidden;
     transition: all 200ms linear;
+    height:100%;
+    margin:0;
 }
-
+body{
+  padding-top:25px;
+}
 p{
   margin: 0;
   padding-top: 10px;
@@ -37,91 +41,6 @@ h4{
   -o-transition:  all 500ms linear;
   -ms-transition:  all 500ms linear;
 }
- 
-.wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.container-fostrap {
-  display: table-cell;
-  padding: 1em;
-  text-align: center;
-  vertical-align: middle;
-}
-.fostrap-logo {
-  width: 100px;
-  margin-bottom:15px
-}
-.card {
-  position: relative;
-  width: calc(100%);
-  margin: 4px 0 12px;
-  padding: 16px 12px 23px;
-  transition: all .4s ease-in-out;
-  background-color: #fcfcfc;
-  height: calc(100% - 16px);
-}
-.card:hover {
-  transform: scale(1.025);
-  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
-  background-color: #fafafa;
-}
-.img-card {
-  width: 100%;
-  height:200px;
-  border-top-left-radius:2px;
-  border-top-right-radius:2px;
-  display:block;
-    overflow: hidden;
-}
-.img-card img{
-  width: 100%;
-  height: 200px;
-  object-fit:cover; 
-  transition: all .25s ease;
-} 
-.date{
-  float: right;
-  left: 14px;
-  right: 9px;
-  bottom: 4px;
-  opacity: 0.82;
-  font-style: italic;
-  font-size: 0.8em;
-}
-.card-content {
-  padding:15px;
-  text-align:left;
-}
-.card-title {
-  font-size: 1.5em;
-  text-transform: capitalize;
-  padding: 5px 2px 2px;
-  font-weight: 600;
-}
-.card-title a {
-  color: #000;
-  text-decoration: none !important;
-}
-.card-read-more a {
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.4);
-  user-select: none;
-    transition: all 0.4s ease-in-out;
-    cursor:pointer;
-    text-align: center; 
-    padding: 12px 9px;
-}
-.card-read-more a:hover{
-  background-color: #eaeaea;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
-
 
 body.dark {
   color: rgba(255,255,255,0.6);
@@ -138,23 +57,121 @@ body.dark p{
   opacity: 0.6;
   color: rgba(255,255,255,0.78);
 }
-.dark .card {
+
+/* --------------------------------
+MAIN COMPONENTS
+-------------------------------- */
+
+#is{}
+
+#is .is-outer{
+  padding-bottom: 25px;
+}
+
+#is .is-card {
+  position: relative;
+  width: calc(100%);
+  margin: 5px 0 15px;
+  transition: all .4s ease-in-out;
+  background-color: #fcfcfc;
+  border-radius: 0 0px 10px 10px;
+  height: calc(100% - 16px);
+}
+#is .is-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
+}
+#is .is-img {
+  width: 100%;
+  height: 200px;
+  /*
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  */
+  display: block;
+  overflow: hidden;
+  opacity: 0.9;
+}
+#is .is-img img{
+  width: 100%;
+  height: 200px;
+  width: -moz-available;
+  object-fit: cover;
+  transition: all 1s cubic-bezier(.29,.64,.45,.94);
+}
+#is .is-card:hover .is-img img{
+  transform: scale(1.02);
+  overflow: hidden;
+  opacity: 1;
+}
+#is .is-card .is-content {
+  padding: 15px 10px 60px;
+  text-align: left;
+  position: relative;
+}
+#is .is-card .is-title{
+  font-size: 1.5em;
+  padding: 7px 2px 2px;
+  font-weight: 600;
+}
+#is .is-card .is-summ{
+  padding: 10px 2px 12px;
+  color: #1f1f1f;
+  font-size: 1.15em;
+}
+#is .is-card .is-date{
+  /*
+  float: right;
+  left: 14px;
+  right: 9px;
+  bottom: 4px;
+  */
+  padding: 2px;
+  opacity: 0.82;
+  font-style: italic;
+  font-size: 0.85em;
+}
+#is .is-card .is-watch a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  user-select: none;
+  border-radius: 0 0px 10px 10px;
+  text-align: center;
+  padding: 9px 16px;
+  transition: all .3s ease-in-out;
+  background-color: rgba(129, 103, 169,.8);
+  color: #fafafa;
+  text-decoration: none;
+}
+#is .is-card .is-watch a:hover{
+  background-color: #6c5393;
+}
+
+.dark #is .is-card {
     background-color: #212121;
 }
-.dark .card:hover {
+.dark #is .is-card:hover {
   background-color: #2f2f2f;
 }
-.dark .card-title a {
+.dark #is .is-title{
   color: rgba(255,255,255,0.85);
 }
-.dark .card-read-more a {
-  background-color: #212121;
-
+.dark #is .is-summ{
+  color: rgba(255,255,255,0.78);
 }
-.dark .card-read-more a:hover{
-  background-color: #2f2f2f;
-}
-
-.date .dark{
+.dark #is .is-date{
   opacity: 0.65;
 }
+.dark #is .is-watch a {
+  background-color: rgba(30, 144, 255, .8);
+  color: rgba(255,255,255,.8);
+
+}
+.dark #is .is-watch a:hover{
+  background-color: #0080ff;
+  color: rgba(255,255,255,.98);
+}
+
+
