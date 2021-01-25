@@ -1,20 +1,41 @@
 
-
 html,
 body {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
-  height: 100%;
-  width: 100%; 
-  background: #FFF;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #212112;
+  background-color: #fbfbfb;
+  overflow-x: hidden;
+    transition: all 200ms linear;
 }
 
 p{
+  margin: 0;
+  padding-top: 10px;
+    font-size: 18px;
+    line-height: 1.3;
+    transition:  all 500ms linear;
+  -webkit-transition:  all 500ms linear;
+  -o-transition:  all 500ms linear;
+  -ms-transition:  all 500ms linear;
   padding: 10px 2px 12px;
   color: #1f1f1f;
   font-size: 1.15em;
+}
+
+h4{
+  font-family: 'Open Sans';
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #212112;
+  transition:  all 500ms linear;
+  -webkit-transition:  all 500ms linear;
+  -o-transition:  all 500ms linear;
+  -ms-transition:  all 500ms linear;
 }
  
 .wrapper {
@@ -34,15 +55,18 @@ p{
   margin-bottom:15px
 }
 .card {
-  display: block; 
-    margin-bottom: 20px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: box-shadow .25s; 
+  position: relative;
+  width: calc(100%);
+  margin: 4px 0 12px;
+  padding: 16px 12px 23px;
+  transition: all .4s ease-in-out;
+  background-color: #fcfcfc;
+  height: calc(100% - 16px);
 }
 .card:hover {
-  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  transform: scale(1.025);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
 }
 .img-card {
   width: 100%;
@@ -60,6 +84,9 @@ p{
 } 
 .date{
   float: right;
+  left: 14px;
+  right: 9px;
+  bottom: 4px;
   opacity: 0.82;
   font-style: italic;
   font-size: 0.8em;
@@ -69,27 +96,28 @@ p{
   text-align:left;
 }
 .card-title {
-  margin-top:0px;
-  font-weight: 600;
   font-size: 1.5em;
   text-transform: capitalize;
   padding: 5px 2px 2px;
-  opacity:0.87;
+  font-weight: 600;
 }
 .card-title a {
   color: #000;
   text-decoration: none !important;
 }
-.card-read-more {
-  border-top: 1px solid #D4D4D4;
-  background-color: #6c757d42;
-}
 .card-read-more a {
-  text-decoration: none !important;
-  padding:10px;
-  font-weight:600;
-  text-transform: uppercase;
-  opacity: 0.87;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.4);
+  user-select: none;
+    transition: all 0.4s ease-in-out;
+    cursor:pointer;
+    text-align: center; 
+    padding: 12px 9px;
+}
+.card-read-more a:hover{
+  background-color: #eaeaea;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
@@ -99,23 +127,34 @@ body.dark {
   color: rgba(255,255,255,0.6);
   background-color: #121212;
 }
+body.dark span{
+    transition-delay: 0ms !important;
+}
+body.dark h4{
+  color: #fff;
+  opacity: 0.87;
+}
+body.dark p{
+  opacity: 0.6;
+  color: rgba(255,255,255,0.78);
+}
 .dark .card {
-    background-color: #212529de;
+    background-color: #212121;
 }
 .dark .card:hover {
-  transform: scale(1.025);
-  transition: all .25s ease;
+  background-color: #2f2f2f;
 }
 .dark .card-title a {
   color: rgba(255,255,255,0.85);
 }
-.dark .card-read-more {
-  border-top: 1px solid rgba(255,255,255,0.85);
-}
 .dark .card-read-more a {
-  opacity: 0.7;
+  background-color: #212121;
+
+}
+.dark .card-read-more a:hover{
+  background-color: #2f2f2f;
 }
 
 .date .dark{
-  opacity: 0.67;
+  opacity: 0.65;
 }
