@@ -92,6 +92,7 @@ MAIN COMPONENTS
   display: block;
   overflow: hidden;
   opacity: 0.9;
+  position:  relative;
 }
 #is .is-img img{
   width: 100%;
@@ -99,6 +100,16 @@ MAIN COMPONENTS
   width: -moz-available;
   object-fit: cover;
   transition: all 1s cubic-bezier(.29,.64,.45,.94);
+}
+#is .is-img .is-upcoming{
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  padding: 2px 7px 2px 6px;
+  background-color: #ca3e47;
+  color: #fafafa;
+  opacity: 0.9;
+  font-size: 0.7em;
 }
 #is .is-card:hover .is-img img{
   transform: scale(1.02);
