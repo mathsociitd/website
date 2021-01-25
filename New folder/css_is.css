@@ -1,0 +1,188 @@
+
+html,
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #212112;
+  background-color: #fbfbfb;
+  overflow-x: hidden;
+    transition: all 200ms linear;
+    height:100%;
+    margin:0;
+}
+body{
+  padding-top:25px;
+}
+p{
+  margin: 0;
+  padding-top: 10px;
+    font-size: 18px;
+    line-height: 1.3;
+    transition:  all 500ms linear;
+  -webkit-transition:  all 500ms linear;
+  -o-transition:  all 500ms linear;
+  -ms-transition:  all 500ms linear;
+  padding: 10px 2px 12px;
+  color: #1f1f1f;
+  font-size: 1.15em;
+}
+
+h4{
+  font-family: 'Open Sans';
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #212112;
+  transition:  all 500ms linear;
+  -webkit-transition:  all 500ms linear;
+  -o-transition:  all 500ms linear;
+  -ms-transition:  all 500ms linear;
+}
+
+body.dark {
+  color: rgba(255,255,255,0.6);
+  background-color: #121212;
+}
+body.dark span{
+    transition-delay: 0ms !important;
+}
+body.dark h4{
+  color: #fff;
+  opacity: 0.87;
+}
+body.dark p{
+  opacity: 0.6;
+  color: rgba(255,255,255,0.78);
+}
+
+/* --------------------------------
+MAIN COMPONENTS
+-------------------------------- */
+
+#is{}
+
+#is .is-outer{
+  padding-bottom: 25px;
+}
+
+#is .is-card {
+  position: relative;
+  width: calc(100%);
+  margin: 5px 0 15px;
+  transition: all .4s ease-in-out;
+  background-color: #fcfcfc;
+  border-radius: 0 0px 10px 10px;
+  height: calc(100% - 16px);
+}
+#is .is-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
+}
+#is .is-img {
+  width: 100%;
+  height: 200px;
+  /*
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  */
+  display: block;
+  overflow: hidden;
+  opacity: 0.9;
+  position:  relative;
+}
+#is .is-img img{
+  width: 100%;
+  height: 200px;
+  width: -moz-available;
+  object-fit: cover;
+  transition: all 1s cubic-bezier(.29,.64,.45,.94);
+}
+#is .is-img .is-upcoming{
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  padding: 2px 7px 2px 6px;
+  background-color: #ca3e47;
+  color: #fafafa;
+  opacity: 0.9;
+  font-size: 0.7em;
+}
+#is .is-card:hover .is-img img{
+  transform: scale(1.02);
+  overflow: hidden;
+  opacity: 1;
+}
+#is .is-card .is-content {
+  padding: 15px 10px 60px;
+  text-align: left;
+  position: relative;
+}
+#is .is-card .is-title{
+  font-size: 1.5em;
+  padding: 7px 2px 2px;
+  font-weight: 600;
+}
+#is .is-card .is-summ{
+  padding: 10px 2px 12px;
+  color: #1f1f1f;
+  font-size: 1.15em;
+}
+#is .is-card .is-date{
+  /*
+  float: right;
+  left: 14px;
+  right: 9px;
+  bottom: 4px;
+  */
+  padding: 2px;
+  opacity: 0.82;
+  font-style: italic;
+  font-size: 0.85em;
+}
+#is .is-card .is-watch a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  user-select: none;
+  border-radius: 0 0px 10px 10px;
+  text-align: center;
+  padding: 9px 16px;
+  transition: all .3s ease-in-out;
+  background-color: rgba(129, 103, 169,.8);
+  color: #fafafa;
+  text-decoration: none;
+}
+#is .is-card .is-watch a:hover{
+  background-color: #6c5393;
+}
+
+.dark #is .is-card {
+    background-color: #212121;
+}
+.dark #is .is-card:hover {
+  background-color: #2f2f2f;
+}
+.dark #is .is-title{
+  color: rgba(255,255,255,0.85);
+}
+.dark #is .is-summ{
+  color: rgba(255,255,255,0.78);
+}
+.dark #is .is-date{
+  opacity: 0.65;
+}
+.dark #is .is-watch a {
+  background-color: rgba(30, 144, 255, .8);
+  color: rgba(255,255,255,.8);
+
+}
+.dark #is .is-watch a:hover{
+  background-color: #0080ff;
+  color: rgba(255,255,255,.98);
+}
+
+
