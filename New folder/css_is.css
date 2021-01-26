@@ -75,7 +75,7 @@ MAIN COMPONENTS
   transition: all .4s ease-in-out;
   background-color: #fcfcfc;
   border-radius: 0 0px 10px 10px;
-  height: calc(100% - 16px);
+  height: calc(100% - 20px);
 }
 #is .is-card:hover {
   transform: scale(1.025);
